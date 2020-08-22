@@ -13,7 +13,7 @@ app.use(json());
 app.get("/SPIData", async (req, res) => {
   const data = await SPIDataModel.find({ package: "C0402" }, null, {
     limit: 100,
-  }).select({ height: any });
+  }).select({ height });
   res.status(200).json(data);
 });
 
