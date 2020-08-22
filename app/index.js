@@ -15,6 +15,7 @@ app.get("/SPIData", async (req, res) => {
     limit: 1000,
   })
     .select("rawData.height")
+    .lean()
     .exec();
   res.status(200).json(data);
 });
